@@ -1,8 +1,20 @@
 {
   "name": "thorbis-business-os",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
-  "description": "AI-first Business Operating System and Truth Layer for local commerce - Monorepo",
+  "description": "AI-first Business Operating System and Truth Layer for local commerce - Optimized Monorepo",
+  "keywords": [
+    "business-os",
+    "monorepo",
+    "next.js",
+    "typescript", 
+    "ai-first",
+    "home-services",
+    "restaurant-pos",
+    "auto-services",
+    "retail-pos",
+    "education-platform"
+  ],
   "scripts": {
     "dev": "turbo run dev",
     "dev:site": "turbo run dev --filter=@thorbis/site",
@@ -11,33 +23,43 @@
     "dev:auto": "turbo run dev --filter=@thorbis/auto",
     "dev:ret": "turbo run dev --filter=@thorbis/ret",
     "dev:courses": "turbo run dev --filter=@thorbis/courses",
+    "dev:books": "turbo run dev --filter=@thorbis/books",
     "dev:payroll": "turbo run dev --filter=@thorbis/payroll",
     "dev:investigations": "turbo run dev --filter=@thorbis/investigations",
     "dev:ai": "turbo run dev --filter=@thorbis/ai",
+    "dev:lom": "turbo run dev --filter=@thorbis/lom",
     "build": "turbo run build",
     "build:apps": "turbo run build --filter='./apps/*'",
     "build:packages": "turbo run build --filter='./packages/*'",
     "lint": "turbo run lint",
     "type-check": "turbo run type-check",
     "test": "turbo run test",
+    "test:unit": "turbo run test:unit",
+    "test:integration": "turbo run test:integration",
+    "test:e2e": "turbo run test:e2e",
     "clean": "turbo run clean && rm -rf node_modules",
+    "clean:cache": "turbo run clean && rm -rf .turbo && rm -rf */.next",
     "db:generate": "turbo run db:generate",
     "db:push": "turbo run db:push",
-    "db:seed": "turbo run db:seed"
+    "db:seed": "turbo run db:seed",
+    "postinstall": "turbo run build --filter=@thorbis/ui --filter=@thorbis/design --filter=@thorbis/schemas"
   },
   "devDependencies": {
     "turbo": "^2.0.0",
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.5.2"
+    "typescript": "^5.7.2",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "eslint": "^9.17.0",
+    "eslint-config-next": "15.5.2",
+    "prettier": "^3.4.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.11"
   },
-  "packageManager": "pnpm@8.15.0",
+  "packageManager": "pnpm@9.15.0",
   "engines": {
-    "node": ">=18",
-    "pnpm": ">=8"
+    "node": ">=20",
+    "pnpm": ">=9"
   },
   "workspaces": [
     "apps/*",
@@ -45,8 +67,31 @@
   ],
   "dependencies": {
     "react": "19.1.0",
-    "react-dom": "19.1.0",
+    "react-dom": "19.1.0", 
     "next": "15.5.2",
-    "playwright": "^1.55.0"
+    "playwright": "^1.55.0",
+    "@supabase/supabase-js": "^2.47.10",
+    "framer-motion": "^11.15.0",
+    "lucide-react": "^0.469.0",
+    "tailwindcss": "^3.4.17",
+    "zod": "^3.24.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/byronwade/Thorbis-Business-OS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/byronwade/Thorbis-Business-OS/issues"
+  },
+  "homepage": "https://thorbis.com",
+  "author": {
+    "name": "Byron Wade", 
+    "email": "bcw1995@gmail.com",
+    "url": "https://github.com/byronwade"
+  },
+  "license": "PROPRIETARY",
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/sponsors/byronwade"
   }
 }

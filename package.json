@@ -2,26 +2,51 @@
   "name": "thorbis-business-os",
   "version": "0.1.0",
   "private": true,
+  "description": "AI-first Business Operating System and Truth Layer for local commerce - Monorepo",
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
-    "start": "next start",
-    "lint": "eslint"
-  },
-  "dependencies": {
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "next": "15.5.2"
+    "dev": "turbo run dev",
+    "dev:site": "turbo run dev --filter=@thorbis/site",
+    "dev:hs": "turbo run dev --filter=@thorbis/hs",
+    "dev:rest": "turbo run dev --filter=@thorbis/rest",
+    "dev:auto": "turbo run dev --filter=@thorbis/auto",
+    "dev:ret": "turbo run dev --filter=@thorbis/ret",
+    "dev:courses": "turbo run dev --filter=@thorbis/courses",
+    "dev:payroll": "turbo run dev --filter=@thorbis/payroll",
+    "dev:investigations": "turbo run dev --filter=@thorbis/investigations",
+    "dev:ai": "turbo run dev --filter=@thorbis/ai",
+    "build": "turbo run build",
+    "build:apps": "turbo run build --filter='./apps/*'",
+    "build:packages": "turbo run build --filter='./packages/*'",
+    "lint": "turbo run lint",
+    "type-check": "turbo run type-check",
+    "test": "turbo run test",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "db:generate": "turbo run db:generate",
+    "db:push": "turbo run db:push",
+    "db:seed": "turbo run db:seed"
   },
   "devDependencies": {
+    "turbo": "^2.0.0",
     "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
-    "eslint-config-next": "15.5.2",
-    "@eslint/eslintrc": "^3"
+    "eslint-config-next": "15.5.2"
+  },
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "dependencies": {
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "next": "15.5.2",
+    "playwright": "^1.55.0"
   }
 }

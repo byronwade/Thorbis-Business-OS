@@ -1,0 +1,61 @@
+{
+  "name": "@thorbis/design",
+  "version": "0.1.0",
+  "description": "Thorbis Design System - Tokens, themes, and design foundations",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./tokens": {
+      "import": "./dist/tokens.js",
+      "require": "./dist/tokens.js",
+      "types": "./dist/tokens.d.ts"
+    },
+    "./themes": {
+      "import": "./dist/themes.js", 
+      "require": "./dist/themes.js",
+      "types": "./dist/themes.d.ts"
+    },
+    "./utils": {
+      "import": "./dist/utils.js",
+      "require": "./dist/utils.js",
+      "types": "./dist/utils.d.ts"
+    },
+    "./tailwind-config": {
+      "import": "./dist/tailwind-config.js",
+      "require": "./dist/tailwind-config.js",
+      "types": "./dist/tailwind-config.d.ts"
+    },
+    "./globals.css": "./src/globals.css"
+  },
+  "files": [
+    "dist",
+    "src/globals.css",
+    "tokens.json"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint src --ext .ts,.tsx",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "clsx": "^2.0.0",
+    "tailwind-merge": "^1.14.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.0",
+    "eslint": "^8.47.0",
+    "tailwindcss": "^3.4.0",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  }
+}
